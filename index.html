@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Carmen Montaño Ruiz | Currículum</title>
+  <style>
+    :root {
+      /* Rosa frambuesa para la marca, acentos y elementos seleccionados. */
+      --color-acento: #DB2777;
+      /* Rosa pálido para fondos suaves y etiquetas de fecha. */
+      --color-rosa-claro: #FCE7F3;
+      /* Rosa pastel para la franja decorativa del currículum. */
+      --color-rosa-pastel: #FBCFE8;
+      /* Burdeos para el avatar y los textos sobre fondos rosas. */
+      --color-burdeos: #831843;
+      /* Berenjena oscuro para títulos, bordes y texto de alto contraste. */
+      --color-tinta: #2E1023;
+      /* Gris oscuro para el texto de cuerpo. */
+      --color-texto: #374151;
+      /* Gris medio para subtítulos y datos secundarios. */
+      --color-gris: #6B7280;
+      /* Blanco puro para la página y las tarjetas. */
+      --color-blanco: #FFFFFF;
+      /* Blanco rosado casi imperceptible para la vista previa. */
+      --color-fondo-plantilla: #FFF9FA;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--color-blanco);
+      color: var(--color-texto);
+      font-family: Inter, "Plus Jakarta Sans", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .site-header {
+      width: min(1120px, calc(100% - 64px));
+      min-height: 92px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--color-tinta);
+      font-size: 1.25rem;
+      font-weight: 850;
+      letter-spacing: -0.07em;
+    }
+
+    .brand span {
+      color: var(--color-acento);
+    }
+
+    .profile-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px 7px 8px;
+      border-radius: 999px;
+      background: var(--color-rosa-claro);
+      color: var(--color-texto);
+      font-size: 0.88rem;
+      font-weight: 650;
+    }
+
+    .profile-avatar {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--color-burdeos);
+      color: var(--color-blanco);
+      font-size: 0.8rem;
+      font-weight: 750;
+    }
+
+    .hero {
+      padding: 54px 24px 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--color-acento);
+      font-size: clamp(2rem, 5vw, 3.65rem);
+      font-weight: 850;
+      letter-spacing: -0.065em;
+      line-height: 1.12;
+    }
+
+    .hero p {
+      max-width: 470px;
+      margin: 16px auto 0;
+      color: var(--color-gris);
+      font-size: 1.04rem;
+      line-height: 1.7;
+    }
+
+    .preview-shell {
+      width: min(960px, calc(100% - 48px));
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid #F3E7ED;
+      border-radius: 20px;
+      background: var(--color-blanco);
+      box-shadow: 0 24px 70px rgba(46, 16, 35, 0.09);
+    }
+
+    .browser-bar {
+      position: relative;
+      display: flex;
+      height: 54px;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #F2E9ED;
+      color: var(--color-gris);
+      font-size: 0.8rem;
+      font-weight: 650;
+      letter-spacing: 0.015em;
+    }
+
+    .browser-dots {
+      position: absolute;
+      left: 20px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-rosa-pastel);
+    }
+
+    .resume {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 30px 44px 48px;
+      background: var(--color-fondo-plantilla);
+    }
+
+    .resume-bar {
+      height: 10px;
+      margin-bottom: 32px;
+      border: 2px solid var(--color-tinta);
+      border-radius: 999px;
+      background: var(--color-rosa-pastel);
+    }
+
+    .resume-intro {
+      display: grid;
+      grid-template-columns: 1fr 132px;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .resume-intro h2 {
+      margin: 0;
+      color: var(--color-tinta);
+      font-size: clamp(1.8rem, 4vw, 2.45rem);
+      font-weight: 850;
+      letter-spacing: -0.055em;
+      line-height: 1.12;
+    }
+
+    .resume-intro p {
+      margin: 9px 0 0;
+      color: var(--color-gris);
+      font-size: 0.95rem;
+    }
+
+    .resume-photo {
+      width: 132px;
+      height: 132px;
+      border: 2px solid var(--color-tinta);
+      border-radius: 22px;
+      background: var(--color-rosa-claro);
+      object-fit: cover;
+      object-position: center 38%;
+    }
+
+    .resume-section {
+      margin-top: 25px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      margin: 0 0 13px;
+      padding: 3px 14px;
+      border: 2px solid var(--color-tinta);
+      border-radius: 999px;
+      background: var(--color-rosa-pastel);
+      box-shadow: 3px 3px 0 var(--color-tinta);
+      color: var(--color-tinta);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .contact-item,
+    .content-card {
+      min-width: 0;
+      border: 1.5px solid var(--color-tinta);
+      border-radius: 13px;
+      background: var(--color-blanco);
+    }
+
+    .contact-item {
+      padding: 11px 14px;
+    }
+
+    .contact-item dt {
+      color: var(--color-gris);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .contact-item dd {
+      overflow-wrap: anywhere;
+      margin: 3px 0 0;
+      color: var(--color-tinta);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .content-card {
+      position: relative;
+      margin-top: 10px;
+      padding: 17px 18px;
+    }
+
+    .content-card h4 {
+      margin: 0;
+      padding-right: 120px;
+      color: var(--color-tinta);
+      font-size: 1rem;
+      font-weight: 750;
+      line-height: 1.4;
+    }
+
+    .content-card p {
+      margin: 5px 0 0;
+      color: var(--color-gris);
+      font-size: 0.9rem;
+    }
+
+    .date-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      max-width: 45%;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--color-rosa-claro);
+      color: #9D174D;
+      font-size: 0.72rem;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .about-copy {
+      margin: 0;
+      color: var(--color-texto);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 6px 12px;
+      border: 1px solid #F3C1D8;
+      border-radius: 999px;
+      background: var(--color-blanco);
+      color: var(--color-tinta);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .template-picker {
+      display: flex;
+      justify-content: center;
+      padding: 24px 24px 42px;
+    }
+
+    .template-card {
+      position: relative;
+      width: 132px;
+      padding: 9px;
+      border: 2px solid var(--color-acento);
+      border-radius: 12px;
+      background: var(--color-blanco);
+      box-shadow: 0 5px 16px rgba(219, 39, 119, 0.1);
+    }
+
+    .template-sample {
+      display: grid;
+      height: 62px;
+      place-content: center;
+      gap: 5px;
+      border: 1px solid #F5D6E4;
+      border-radius: 6px;
+      background: var(--color-fondo-plantilla);
+    }
+
+    .template-sample span {
+      width: 60px;
+      height: 5px;
+      border-radius: 99px;
+      background: var(--color-rosa-pastel);
+    }
+
+    .template-sample span:nth-child(2) {
+      width: 45px;
+      background: #E9D5E0;
+    }
+
+    .template-name {
+      display: block;
+      padding-top: 5px;
+      color: var(--color-tinta);
+      font-size: 0.78rem;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .template-badge {
+      position: absolute;
+      top: -11px;
+      right: -9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--color-acento);
+      color: var(--color-blanco);
+      font-size: 0.65rem;
+      font-weight: 750;
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        width: calc(100% - 36px);
+        min-height: 72px;
+      }
+
+      .brand {
+        font-size: 1.1rem;
+      }
+
+      .profile-pill {
+        gap: 7px;
+        padding: 5px 11px 5px 6px;
+        font-size: 0.78rem;
+      }
+
+      .profile-avatar {
+        width: 29px;
+        height: 29px;
+      }
+
+      .hero {
+        padding: 42px 22px 34px;
+      }
+
+      .hero p {
+        font-size: 0.94rem;
+      }
+
+      .preview-shell {
+        width: calc(100% - 24px);
+        border-radius: 15px;
+      }
+
+      .browser-bar {
+        height: 46px;
+      }
+
+      .browser-dots {
+        left: 14px;
+      }
+
+      .resume {
+        padding: 23px 18px 34px;
+      }
+
+      .resume-bar {
+        margin-bottom: 25px;
+      }
+
+      .resume-intro {
+        grid-template-columns: 1fr 92px;
+        gap: 14px;
+        margin-bottom: 25px;
+      }
+
+      .resume-photo {
+        width: 92px;
+        height: 108px;
+        border-radius: 16px;
+      }
+
+      .resume-intro p {
+        font-size: 0.84rem;
+      }
+
+      .resume-section {
+        margin-top: 21px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact-item {
+        padding: 9px 12px;
+      }
+
+      .content-card {
+        padding: 15px 13px;
+      }
+
+      .content-card h4 {
+        padding-right: 0;
+        font-size: 0.94rem;
+      }
+
+      .date-pill {
+        position: static;
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 7px;
+      }
+
+      .content-card p {
+        font-size: 0.85rem;
+      }
+
+      .template-picker {
+        padding-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .profile-pill {
+        font-size: 0.72rem;
+      }
+
+      .resume {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      .resume-intro {
+        grid-template-columns: 1fr 76px;
+      }
+
+      .resume-photo {
+        width: 76px;
+        height: 94px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Currículum de Carmen Montaño Ruiz">CMR<span>.</span></a>
+    <div class="profile-pill" aria-label="Perfil de Carmen">
+      <span class="profile-avatar" aria-hidden="true">C</span>
+      <span>carmen</span>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Carmen Montaño Ruiz</h1>
+      <p>Estudiante de Trabajo Social<br>Jerez de la Frontera</p>
+    </section>
+
+    <div class="preview-shell" aria-label="Currículum de Carmen Montaño Ruiz">
+      <div class="browser-bar" aria-hidden="true">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        Currículum
+      </div>
+
+      <article class="resume">
+        <div class="resume-bar" aria-hidden="true"></div>
+        <header class="resume-intro">
+          <div>
+            <h2>Carmen Montaño Ruiz</h2>
+            <p>Jerez de la Frontera</p>
+          </div>
+          <img class="resume-photo" src="imagenes/foto.png" alt="Foto de Carmen Montaño Ruiz">
+        </header>
+
+        <!-- ===== SECCION: DATOS DE CONTACTO ===== -->
+        <section class="resume-section" aria-labelledby="contact-title">
+          <h3 class="section-label" id="contact-title">Datos de contacto</h3>
+          <dl class="contact-grid">
+            <div class="contact-item">
+              <dt>Teléfono</dt>
+              <dd><a href="tel:+34653074719">+34 653074719</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>Correo electrónico</dt>
+              <dd><a href="mailto:carmennruizz005@gmail.com">carmennruizz005@gmail.com</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>Ubicación</dt>
+              <dd>Jerez de la Frontera</dd>
+            </div>
+          </dl>
+        </section>
+        <!-- ===== FIN: DATOS DE CONTACTO ===== -->
+
+        <!-- ===== SECCION: SOBRE MÍ ===== -->
+        <section class="resume-section" aria-labelledby="about-title">
+          <h3 class="section-label" id="about-title">Sobre mí</h3>
+          <div class="content-card">
+            <p class="about-copy">Soy una persona comprometida y con una gran capacidad de aprendizaje. Me apasionan los ambientes dinámicos y el trato con el público.</p>
+          </div>
+        </section>
+        <!-- ===== FIN: SOBRE MÍ ===== -->
+
+        <!-- ===== SECCION: FORMACIÓN ===== -->
+        <section class="resume-section" aria-labelledby="education-title">
+          <h3 class="section-label" id="education-title">Formación</h3>
+          <article class="content-card">
+            <span class="date-pill">Actual</span>
+            <h4>Grado en Trabajo Social</h4>
+            <p>Universidad de Cádiz</p>
+          </article>
+          <article class="content-card">
+            <span class="date-pill">2021–2023</span>
+            <h4>Bachillerato Ciencias Sociales</h4>
+            <p>I.E.S Lola Flores</p>
+          </article>
+        </section>
+        <!-- ===== FIN: FORMACIÓN ===== -->
+
+        <!-- ===== SECCION: EXPERIENCIA ===== -->
+        <section class="resume-section" aria-labelledby="experience-title">
+          <h3 class="section-label" id="experience-title">Experiencia</h3>
+          <article class="content-card">
+            <span class="date-pill">Agosto 2025</span>
+            <h4>Camarera en barra</h4>
+            <p>La Flamenca</p>
+          </article>
+          <article class="content-card">
+            <span class="date-pill">Enero 2024–2025</span>
+            <h4>Figurante de cabezudo en cabalgatas de reyes</h4>
+            <p>Brotons cabalgatas y disfraces S.L.</p>
+          </article>
+        </section>
+        <!-- ===== FIN: EXPERIENCIA ===== -->
+
+        <!-- ===== SECCION: HABILIDADES ===== -->
+        <section class="resume-section" aria-labelledby="skills-title">
+          <h3 class="section-label" id="skills-title">Habilidades</h3>
+          <ul class="tag-list">
+            <li>Puntualidad</li>
+            <li>Aprendizaje rápido</li>
+            <li>Buena presencia</li>
+            <li>Resolución de problemas</li>
+            <li>Buena atención al cliente</li>
+            <li>Trabajo en equipo</li>
+          </ul>
+        </section>
+        <!-- ===== FIN: HABILIDADES ===== -->
+
+        <!-- ===== SECCION: IDIOMAS ===== -->
+        <section class="resume-section" aria-labelledby="languages-title">
+          <h3 class="section-label" id="languages-title">Idiomas</h3>
+          <ul class="tag-list">
+            <li>Español: Nativo</li>
+            <li>Inglés: Nivel B2</li>
+          </ul>
+        </section>
+        <!-- ===== FIN: IDIOMAS ===== -->
+
+        <!-- ===== SECCION: OTROS ===== -->
+        <section class="resume-section" aria-labelledby="other-title">
+          <h3 class="section-label" id="other-title">Otros</h3>
+          <div class="content-card">
+            <p class="about-copy">Disponibilidad media jornada</p>
+          </div>
+        </section>
+        <!-- ===== FIN: OTROS ===== -->
+      </article>
+    </div>
+
+    <div class="template-picker" aria-label="Plantilla seleccionada">
+      <div class="template-card" aria-current="true">
+        <span class="template-badge">Activa</span>
+        <div class="template-sample" aria-hidden="true"><span></span><span></span></div>
+        <span class="template-name">Playful</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
